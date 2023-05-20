@@ -6,7 +6,7 @@ XAUTH=/tmp/.docker.xauth
 
 
 docker run -it \
-    --name=r2_pathplanning_container \
+    --name=ros_gpu \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
@@ -14,12 +14,9 @@ docker run -it \
     --volume="$XAUTH:$XAUTH" \
     --net=host \
     --privileged \
-    --runtime=nvidia \
-    haiderabbasi333/ros2-pathplanning-course:2 \
-    sudo apt install snapd\
-    sudo snap install --classic code\
+    ros_gazebo_gpu:latest
     
     bash
-
+#    --gpus '"device=0"' nvidia/cuda
 echo "Done."
 

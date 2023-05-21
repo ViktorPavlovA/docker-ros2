@@ -6,7 +6,8 @@ XAUTH=/tmp/.docker.xauth
 
 
 docker run -it \
-    --name=ros_gpu \
+    -e NVIDIA_DRIVER_CAPABILITIES=all \
+    --name=ros_gpu2 \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
@@ -14,9 +15,9 @@ docker run -it \
     --volume="$XAUTH:$XAUTH" \
     --net=host \
     --privileged \
+    --gpus all \
     ros_gazebo_gpu:latest
     
     bash
-#    --gpus '"device=0"' nvidia/cuda
 echo "Done."
 

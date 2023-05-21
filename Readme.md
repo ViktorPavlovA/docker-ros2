@@ -5,6 +5,7 @@
 ### *  C визуализацией
 
 **Необходимо установить зависимости Nvidia**
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian
 
 `DIST=$(. /etc/os-release; echo $ID$VERSION_ID)`
 

@@ -22,6 +22,8 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 `sudo apt-get update&& sudo apt-get install -y nvidia-container-toolkit-base`
 
+docker run --rm --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 -it nvidia/cuda:11.2.0-cudnn8-devel-ubuntu20.04 nvidia-smi
+
 
 
 **Содержимое контейнера**

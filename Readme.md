@@ -24,6 +24,21 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 `docker run --rm --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 -it nvidia/cuda:11.2.0-cudnn8-devel-ubuntu20.04 nvidia-smi`
 
+**Если что то идет не так**
+
+Step 1
+`sudo ubuntu-drivers autoinstall`
+Step 2
+`ubuntu-drivers devices`
+Step 3
+Install the recommended option based on the previous terminal output
+for example:
+`sudo apt install nvidia-driver-515`
+Step 4
+`sudo reboot`
+
+This worked for me.
+
 https://github.com/NVIDIA/nvidia-docker/issues/1648
 
 **Содержимое контейнера**
